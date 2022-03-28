@@ -1,5 +1,7 @@
 package com.hernandez.puntuacion
 
+import android.content.Intent
+import android.nfc.Tag
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -16,13 +18,15 @@ class MainActivity : AppCompatActivity() {
     private lateinit var teamBScoreTextView: TextView
     private lateinit var teamAddButton:Button
     private lateinit var teamBAddButton:Button
+    private  lateinit var saveButton:Button
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         Log.d(TAG,"onCreate")
         bind()
-//      Utilizar condicionales
+//      Utilizar condicionales almacenar los datos
         savedInstanceState?.let{ bundle ->
             scoreTeamA = bundle.getInt(KEY_SCORE_TEAM_A,0)
             scoreTeamB = bundle.getInt(KEY_SCORE_TEAM_B,0)
@@ -41,6 +45,10 @@ class MainActivity : AppCompatActivity() {
 //        Team B
         teamBScoreTextView = findViewById(R.id.score_team_b_text_view)
         teamBAddButton = findViewById(R.id.add_one_team_b)
+
+        //Save
+        saveButton = findViewById(R.id.action_save)
+
     }
 
 
@@ -57,14 +65,34 @@ class MainActivity : AppCompatActivity() {
     private  fun addListeners(){
 //    Aqui esta la clave de la tarea
         teamAddButton.setOnClickListener{
-            scoreTeamA++
+            scoreTeamA=scoreTeamA+1
             updateVisualScore(teamAScoreTextView,scoreTeamA)
         }
         teamBAddButton.setOnClickListener{
             scoreTeamB++
             updateVisualScore(teamBScoreTextView,scoreTeamB)
         }
+
+        saveButton.setOnClickListener{
+            onSave()
+        }
     }
+
+    private fun onSave(){
+        Log.d(TAG,"onSave")
+
+        //Intent
+        //Yo quiero ir desde esta pagina hasta la otra
+        val intent = Intent(this,ScoreActivity::class.java)
+
+//      Poder utilizar los valores del score
+        intent.putExtra(KEY_SCORE_TEAM_A,scoreTeamA)
+        intent.putExtra(KEY_SCORE_TEAM_B,scoreTeamB)
+
+        startActivity(intent)
+    }
+
+
 //    esta realizando una funcion con argumentos
     private fun updateVisualScore(view:TextView,score:Int){
         view.text = score.toString()
@@ -113,11 +141,10 @@ class MainActivity : AppCompatActivity() {
     companion object{
         val TAG = MainActivity::class.simpleName
 
+
 //        Declarar una constante para evitar errores de mano
-        private const val KEY_SCORE_TEAM_A = "ScoreTeamA"
-        private const val KEY_SCORE_TEAM_B = "ScoreTeamB"
+        const val KEY_SCORE_TEAM_A = "ScoreTeamA"
+        const val KEY_SCORE_TEAM_B = "ScoreTeamB"
     }
-
-
 
 }
