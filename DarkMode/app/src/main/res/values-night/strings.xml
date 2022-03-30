@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Dark Mode</string>
+    <string name="text_main">\"Lorem ipsum dolor sit amet, consectetur adipiscing elit,sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
+    <string name="text_btn_view">Enable Dark Mode</string>
+    <string name="text_title">App Dark Mode</string>
+</resources>
