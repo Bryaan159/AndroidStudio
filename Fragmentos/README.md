@@ -1,7 +1,7 @@
 Pasos para agregar un fragment 
 
 -Se debe de crear un Kotlin Class File  
--Se debe de colocar su nombre que deseamos "Name"  
+-Se debe de colocar su nombre que deseamos "Name"  que en mi caso es GrettingFragment
 -Al entrar en "Name" : Fragment()  
 -Se importa y la primera opcion   
 -Se debe de agregar => override fun OnCreate()  
@@ -37,8 +37,8 @@ tools:context=".GrettingFragment"
 
 ```
 
-Para agregarlo de manera manual se debe de usar un FrameLayout
--Se debe de hacer de un tamaño el cuadro y luego regresarlo a wrap_content  
+Para agregarlo de manera manual se debe de usar un FrameLayout   
+-Se debe de hacer de un tamaño el cuadro y luego regresarlo a wrap_content   
 -Se debe de coloca un ID como tambien se le debe de agregar ConstraitLayout
 
 ```xml
@@ -52,5 +52,21 @@ Para agregarlo de manera manual se debe de usar un FrameLayout
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gretting_1" />
 ```
+*** Al reaalizar lo de FrameLayout se esta haciendo como un <div></div> diciendo donde quiero que se coloque dicho fragmento   
 
+
+### MainAcivity
+```kotlin
+    val fragmentManager = supportFragmentManager
+    val fragmentTransaction = fragmentManager.beginTransaction()
+    
+//    Se debe de colocar el archivo secundario que se creo en .kt
+    val fragment = GrettingFragment()
+
+    fragmentTransaction
+    .add(R.id.frameLayout_fragment,fragment)
+    .commit()
+
+
+```
 
