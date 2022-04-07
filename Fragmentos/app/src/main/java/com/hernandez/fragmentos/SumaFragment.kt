@@ -1,11 +1,14 @@
 package com.hernandez.fragmentos
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
+import java.lang.ClassCastException
 
 
 //Agregar variables
@@ -16,6 +19,17 @@ class SumaFragment : Fragment() {
     // Se debe de colocar el tipo de variable que se va a utilizar
     private var sum1: Int? = null
     private var sum2: Int? = null
+
+//    Interfaces
+    private var listerner: onActionListener? = null
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        listerner = context as? onActionListener
+        if(listerner == null){
+            throw ClassCastException("$context must implement onActionListener")
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,12 +57,26 @@ class SumaFragment : Fragment() {
         val sumando2TextView:TextView = view.findViewById(R.id.sumando_dos_text_view)
         val resultTextView:TextView = view.findViewById(R.id.resultado_text_view)
 
+//    Interface
+        val result:Int =(sum1?.plus(sum2!!))?:0
+
         sumando1TextView.text = sum1.toString()
         sumando2TextView.text = sum2.toString()
 
 //    Para realizar la suma de ambos numeros
-        resultTextView.text = sum1?.plus(sum2!!).toString()
+        resultTextView.text = result.toString()
 
+//    Buscar el boton
+    val actionButton:Button = view.findViewById(R.id.action_button)
+    actionButton.setOnClickListener{
+        listerner?.onActionClick(result)
+    }
+
+    }
+
+//    Interface
+    interface  onActionListener{
+        fun onActionClick(result:Int)
     }
 
     companion object {

@@ -2,8 +2,11 @@ package com.hernandez.fragmentos
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Button
+import android.widget.Toast
+import kotlin.random.Random
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), SumaFragment.onActionListener {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -15,14 +18,17 @@ class MainActivity : AppCompatActivity() {
 
 //        val fragment = GrettingFragment()
 
-        val fragment = SumaFragment.newInstance(9,5)
+        val fragment = SumaFragment.newInstance(2,2)
 
         fragmentTransaction
             .add(R.id.frameLayout_fragment,fragment)
             .commit()
 
+    }
 
-
-
+    override fun onActionClick(result: Int) {
+        Toast
+            .makeText(this,"El resultado es $result",Toast.LENGTH_SHORT)
+            .show()
     }
 }
