@@ -13,7 +13,9 @@ class MainActivity : AppCompatActivity() {
         val fragmentManager = supportFragmentManager
         val fragmentTransaction = fragmentManager.beginTransaction()
 
-        val fragment = GrettingFragment()
+//        val fragment = GrettingFragment()
+
+        val fragment = SumaFragment.newInstance(9,5)
 
         fragmentTransaction
             .add(R.id.frameLayout_fragment,fragment)

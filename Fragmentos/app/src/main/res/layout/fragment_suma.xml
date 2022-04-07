@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
 
-        tools:text="+"/>
+        android:text="+"/>
 
     <TextView
         android:id="@+id/sumando_dos_text_view"
@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
 
-        tools:text="="/>
+        android:text="="/>
 
     <TextView
         android:id="@+id/resultado_text_view"
