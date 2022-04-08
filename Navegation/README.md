@@ -1,5 +1,7 @@
 # Navegacion
 
+App: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
+
 ## **Enlaces**
 Developer Jecktpack
 https://developer.android.com/jetpack/androidx/explorer?hl=es-419
@@ -48,14 +50,22 @@ debugImplementation("androidx.fragment:fragment-testing:$fragment_version")
 
 ```
 
-
 ### Activity_main.xml
-
 
 ```xml
 
 
 ```
+### nav_graph.xml
+-New  
+-Android Resourse File
+-Type Navigation
+```xml
+
+```
+### HomeFragment
+
+### SecondFragment
 
 ### MainActivity
 ```kotlin
