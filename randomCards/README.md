@@ -14,5 +14,49 @@ Explicacion del codigo
 ```kotlin
 //Codigo
 
+class MainActivity : AppCompatActivity() {
+
+    lateinit var imageView:ImageView
+    lateinit var buttonRandom:Button
+
+    val barajaCards: IntArray = intArrayOf(
+        R.drawable.hearts2,
+        R.drawable.hearts3,
+        R.drawable.hearts4,
+        R.drawable.hearts5,
+        R.drawable.hearts6,
+        R.drawable.hearts7,
+        R.drawable.hearts8,
+        R.drawable.hearts9,
+        R.drawable.hearts10,
+        R.drawable.hearts12,
+        R.drawable.hearts13,
+        R.drawable.hearts14,
+        R.drawable.hearts15
+    )
+
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        bind()
+
+        buttonRandom.setOnClickListener{
+            randomCards()
+        }
+    }
+
+    private fun bind(){
+        imageView = findViewById(R.id.imageView)
+        buttonRandom = findViewById(R.id.boton)
+
+    }
+    private fun randomCards(){
+        val randomCard = Random
+        imageView.setImageResource(barajaCards[randomCard.nextInt(barajaCards.size)])
+    }
+}
+
 
 ```
