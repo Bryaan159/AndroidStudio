@@ -13,25 +13,25 @@ class SuperHeroDataBase {
                 "Iron Man",
                 "Marvel",
                 "Tony Stark",
-                "https://www.sideshow.com/storage/product-images/3003532/iron-man-mark-xliii_marvel_square.jpg"
+                "https://i.pinimg.com/originals/b2/2a/3e/b22a3e3ef491c790e2cc9ab7aebaa3dc.png"
             ),
             SuperHero(
                 "Thor",
                 "Marvel",
                 "Thor Odinson",
-                "https://terrigen-cdn-dev.marvel.com/content/prod/1x/004tho_ons_mas_mob_01_0.jpg"
+                "https://www.pinclipart.com/picdir/big/538-5389447_logo-do-thor-png-thor-png-logo-clipart.png"
             ),
             SuperHero(
                 "Batman",
                 "DC",
                 "Bruce Wayne",
-                "https://preview.redd.it/ajcve4pklyt71.jpg?auto=webp&s=b7717972a8a1e6b21f2b95e6d41acc57000112cb"
+                "https://images.squarespace-cdn.com/content/v1/57e8ded420099e6ecb86cf65/1478878636113-GUEMFAA8KC6L7FTBC1GQ/Batman_Detail_1_v2_edge.png"
             ),
             SuperHero(
                 "Shazam",
                 "Dc",
                 "Billy Batson",
-                "https://assets.mycast.io/posters/shazam-fan-casting-poster-26769-large.jpg?1580443266"
+                "https://www.pngkey.com/png/full/46-469103_dc-logo-remakes-shazam-dc-logo-png.png"
             ),
             SuperHero(
                 "Moon Knight",
@@ -43,7 +43,7 @@ class SuperHeroDataBase {
                 "Peacemaker",
                 "Dc",
                 "Christopher Smith",
-                "https://pbs.twimg.com/media/E9ai1b-WYAICrgA.jpg"
+                "https://hbomax-images.warnermediacdn.com/2022-01/peacemaker.png?host=wme-hbomax-drupal-prod.s3.amazonaws.com"
             )
         )
     }
