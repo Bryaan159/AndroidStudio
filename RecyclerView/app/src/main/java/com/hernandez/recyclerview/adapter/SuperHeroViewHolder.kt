@@ -3,6 +3,7 @@ package com.hernandez.recyclerview.adapter
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.hernandez.recyclerview.R
@@ -36,6 +37,10 @@ class SuperHeroViewHolder(view: View):RecyclerView.ViewHolder(view){
         binding.tvRealName.text = superHeroModel.realName
         binding.tvPublisher.text = superHeroModel.publisher
         Glide.with(binding.ivSuperHero.context).load(superHeroModel.photo).into(binding.ivSuperHero)
+//    Para que salga un mensaje al darle clic a la imagen
+        binding.ivSuperHero.setOnClickListener{Toast.makeText(binding.ivSuperHero.context,superHeroModel.realName,Toast.LENGTH_SHORT).show()}
+
+
 
 
     }
